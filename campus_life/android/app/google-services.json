@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1034519621020",
+    "project_id": "campus-life-hnyeyn",
+    "storage_bucket": "campus-life-hnyeyn.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034519621020:android:980e6f5844a80debaa6c59",
+        "android_client_info": {
+          "package_name": "com.mycompany.campuslife"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQmkiBzASB4JVQGfa1Poh8wmWKRN1Zy9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
