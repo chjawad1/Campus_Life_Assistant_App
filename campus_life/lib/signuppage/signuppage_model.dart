@@ -17,6 +17,10 @@ class SignuppageModel extends FlutterFlowModel<SignuppageWidget> {
   FocusNode? signupemailFocusNode;
   TextEditingController? signupemailTextController;
   String? Function(BuildContext, String?)? signupemailTextControllerValidator;
+  // State field(s) for username widget.
+  FocusNode? usernameFocusNode;
+  TextEditingController? usernameTextController;
+  String? Function(BuildContext, String?)? usernameTextControllerValidator;
   // State field(s) for signuppassword widget.
   FocusNode? signuppasswordFocusNode;
   TextEditingController? signuppasswordTextController;
@@ -40,6 +44,9 @@ class SignuppageModel extends FlutterFlowModel<SignuppageWidget> {
   void dispose() {
     signupemailFocusNode?.dispose();
     signupemailTextController?.dispose();
+
+    usernameFocusNode?.dispose();
+    usernameTextController?.dispose();
 
     signuppasswordFocusNode?.dispose();
     signuppasswordTextController?.dispose();
