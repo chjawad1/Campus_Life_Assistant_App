@@ -16,16 +16,6 @@ class ClassScheduleRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "startTime" field.
-  DateTime? _startTime;
-  DateTime? get startTime => _startTime;
-  bool hasStartTime() => _startTime != null;
-
-  // "endTime" field.
-  DateTime? _endTime;
-  DateTime? get endTime => _endTime;
-  bool hasEndTime() => _endTime != null;
-
   // "subject" field.
   String? _subject;
   String get subject => _subject ?? '';
@@ -36,41 +26,15 @@ class ClassScheduleRecord extends FirestoreRecord {
   String get room => _room ?? '';
   bool hasRoom() => _room != null;
 
-  // "teacher" field.
-  DocumentReference? _teacher;
-  DocumentReference? get teacher => _teacher;
-  bool hasTeacher() => _teacher != null;
-
-  // "students" field.
-  List<DocumentReference>? _students;
-  List<DocumentReference> get students => _students ?? const [];
-  bool hasStudents() => _students != null;
-
-  // "Classname" field.
-  String? _classname;
-  String get classname => _classname ?? '';
-  bool hasClassname() => _classname != null;
-
   // "classtime" field.
   DateTime? _classtime;
   DateTime? get classtime => _classtime;
   bool hasClasstime() => _classtime != null;
 
-  // "roomno" field.
-  String? _roomno;
-  String get roomno => _roomno ?? '';
-  bool hasRoomno() => _roomno != null;
-
   void _initializeFields() {
-    _startTime = snapshotData['startTime'] as DateTime?;
-    _endTime = snapshotData['endTime'] as DateTime?;
     _subject = snapshotData['subject'] as String?;
     _room = snapshotData['room'] as String?;
-    _teacher = snapshotData['teacher'] as DocumentReference?;
-    _students = getDataList(snapshotData['students']);
-    _classname = snapshotData['Classname'] as String?;
     _classtime = snapshotData['classtime'] as DateTime?;
-    _roomno = snapshotData['roomno'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -108,25 +72,15 @@ class ClassScheduleRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createClassScheduleRecordData({
-  DateTime? startTime,
-  DateTime? endTime,
   String? subject,
   String? room,
-  DocumentReference? teacher,
-  String? classname,
   DateTime? classtime,
-  String? roomno,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'startTime': startTime,
-      'endTime': endTime,
       'subject': subject,
       'room': room,
-      'teacher': teacher,
-      'Classname': classname,
       'classtime': classtime,
-      'roomno': roomno,
     }.withoutNulls,
   );
 
@@ -139,30 +93,14 @@ class ClassScheduleRecordDocumentEquality
 
   @override
   bool equals(ClassScheduleRecord? e1, ClassScheduleRecord? e2) {
-    const listEquality = ListEquality();
-    return e1?.startTime == e2?.startTime &&
-        e1?.endTime == e2?.endTime &&
-        e1?.subject == e2?.subject &&
+    return e1?.subject == e2?.subject &&
         e1?.room == e2?.room &&
-        e1?.teacher == e2?.teacher &&
-        listEquality.equals(e1?.students, e2?.students) &&
-        e1?.classname == e2?.classname &&
-        e1?.classtime == e2?.classtime &&
-        e1?.roomno == e2?.roomno;
+        e1?.classtime == e2?.classtime;
   }
 
   @override
-  int hash(ClassScheduleRecord? e) => const ListEquality().hash([
-        e?.startTime,
-        e?.endTime,
-        e?.subject,
-        e?.room,
-        e?.teacher,
-        e?.students,
-        e?.classname,
-        e?.classtime,
-        e?.roomno
-      ]);
+  int hash(ClassScheduleRecord? e) =>
+      const ListEquality().hash([e?.subject, e?.room, e?.classtime]);
 
   @override
   bool isValidKey(Object? o) => o is ClassScheduleRecord;
