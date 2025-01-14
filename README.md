@@ -52,7 +52,10 @@ Comprehensive documentation included for setup and usage.
 Fully tested for functionality and reliability.
 Home Page 
 
-![Screenshot_20250114-230644](https://github.com/user-attachments/assets/0df47093-fd14-4ab5-aea4-47b03944efac)
 
-![Screenshot 2025-01-13 220625](https://github.com/user-attachments/assets/da3e0a3e-2235-4a7b-97fc-31516c1f023e)
-![Screenshot_20250114-230650](https://github.com/user-attachments/assets/e7fe1ab8-fb3b-469c-9e35-d734666622b9)
+
+![image](https://github.com/user-attachments/assets/74929ee9-9758-4b37-82e1-0b4f87f408cc)
+![Screenshot 2025-01-13 220625](https://github.com/user-attachments/assets/4515ebc8-b05b-4640-97c1-d46a62ab983a)
+
+![image](https://github.com/user-attachments/assets/de3a7019-3bfa-47a2-b1b5-f99f004afe82)
+
